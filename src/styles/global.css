@@ -195,6 +195,10 @@ img {
   border-radius: var(--border-radius-md);
 }
 
+[data-theme="dark"].team-info p {   
+  color: var(--color-medium-gray);
+}
+
 .join-faq{
     padding: var(--spacing-md);
     border-radius: var(--border-radius-md);
