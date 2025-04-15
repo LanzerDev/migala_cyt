@@ -1,0 +1,258 @@
+---
+// Componente de Carrusel para imágenes y videos destacados
+---
+
+<section class="carousel-section">
+  <div class="container">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <div class="carousel-content">
+            <h2>Descubre la ciencia</h2>
+            <p>Explorando el universo a través del conocimiento científico</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-content">
+            <h2>Tecnología para todos</h2>
+            <p>Democratizando el acceso a las herramientas del futuro</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-content">
+            <h2>Comunidad Migala</h2>
+            <p>Uniendo mentes curiosas para transformar el mundo</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel-indicators">
+          <button class="indicator active" aria-label="Ir a slide 1"></button>
+          <button class="indicator" aria-label="Ir a slide 2"></button>
+          <button class="indicator" aria-label="Ir a slide 3"></button>
+        </div>
+        <button class="carousel-btn next" aria-label="Siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const indicators = Array.from(document.querySelectorAll('.indicator'));
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = document.querySelector('.carousel-btn.next');
+    
+    let currentIndex = 0;
+    const slideCount = slides.length;
+    
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+      // Actualizar clases de slides
+      slides.forEach((slide, index) => {
+        if (index === currentIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      
+      // Actualizar indicadores
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+    
+    // Evento para el botón siguiente
+    nextButton?.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateCarousel();
+    });
+    
+    // Evento para el botón anterior
+    prevButton?.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateCarousel();
+    });
+    
+    // Eventos para los indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+    
+    // Autoplay
+    let autoplayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateCarousel();
+    }, 5000);
+    
+    // Detener autoplay al interactuar
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer?.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+    
+    carouselContainer?.addEventListener('mouseleave', () => {
+      autoplayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateCarousel();
+      }, 5000);
+    });
+  });
+</script>
+
+<style>
+  .carousel-section {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    height: 400px;
+  }
+  
+  .carousel-track {
+    height: 100%;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .carousel-slide:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  }
+  
+  .carousel-slide:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  }
+  
+  .carousel-slide:nth-child(3) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                linear-gradient(135deg, var(--color-dark), var(--color-primary));
+  }
+  
+  .carousel-content {
+    text-align: center;
+    color: white;
+    padding: var(--spacing-xl);
+    max-width: 800px;
+  }
+  
+  .carousel-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .carousel-content p {
+    font-size: 1.25rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .carousel-controls {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    z-index: 2;
+  }
+  
+  .carousel-btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .indicator.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-container {
+      height: 300px;
+    }
+    
+    .carousel-content h2 {
+      font-size: 1.8rem;
+    }
+    
+    .carousel-content p {
+      font-size: 1rem;
+    }
+  }
+</style>

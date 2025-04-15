@@ -1,0 +1,121 @@
+---
+// Componente Sobre Nosotros
+---
+
+<section id="sobre-nosotros" class="section sobre-nosotros-section">
+  <div class="container">
+    <div class="sobre-nosotros-container">
+      <div class="sobre-nosotros-content">
+        <h2>Sobre nosotros...</h2>
+        <div class="section-divider"></div>
+        
+        <p>
+          Desde nuestros textos hasta nuestros videos, son el esfuerzo de muchas personas. Estamos entusiasmados de recibir a cualquiera que quiera y pueda ayudar. No requerimos tu dinero, lo que queremos es tu esfuerzo, desde asesorar, escribir, grabar audio y/o editar vídeos, crear comunidad; o simplemente compartir tu conocimiento.
+        </p>
+        
+        <p>
+          La ciencia y la tecnología son los motores del progreso humano, y creemos que es importante que la mayor cantidad de personas posible tengan acceso a información de calidad sobre estos temas. Creemos que la ciencia y la tecnología son temas que deben ser tratados con seriedad y rigor, pero también con entusiasmo y pasión.
+        </p>
+      </div>
+      
+      <div class="sobre-nosotros-image">
+        <div class="image-container">
+          <div class="image-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sobre-nosotros-section {
+    padding: var(--spacing-xxl) 0;
+  }
+  
+  .sobre-nosotros-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+  
+  .sobre-nosotros-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .sobre-nosotros-content p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-dark-light));
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .image-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 768px) {
+    .sobre-nosotros-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .sobre-nosotros-content {
+      order: 2;
+    }
+    
+    .sobre-nosotros-image {
+      order: 1;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .image-container {
+      min-height: 300px;
+    }
+    
+    .sobre-nosotros-content h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

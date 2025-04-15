@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from '../components/Hero.astro';
+import Carousel from '../components/Carousel.astro';
+import Iniciativas from '../components/Iniciativas.astro';
+import SobreNosotros from '../components/SobreNosotros.astro';
+import ComoAyudar from '../components/ComoAyudar.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Migala Ciencia y Tecnología | Inicio"
+  description="Somos una comunidad que impulsa y difunde la Ciencia y Tecnología para todos. Únete a nuestras iniciativas de divulgación, conversatorios y talleres."
+>
+  <Hero />
+  <Carousel />
+  <Iniciativas />
+  <SobreNosotros />
+  <ComoAyudar />
 </Layout>

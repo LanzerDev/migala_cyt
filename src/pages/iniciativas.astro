@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Iniciativas | Migala Ciencia y Tecnología"
+  description="Conoce nuestras iniciativas de divulgación científica y tecnológica: divulgación en redes, conversatorios y talleres."
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>Nuestras Iniciativas</h1>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="iniciativas-intro">
+        <p>
+          En Migala Ciencia y Tecnología desarrollamos diversas iniciativas para acercar el conocimiento científico y tecnológico a todas las personas. Nuestro objetivo es crear espacios de aprendizaje, diálogo y experimentación que fomenten el pensamiento crítico y el interés por la ciencia.
+        </p>
+      </div>
+      
+      <div class="iniciativas-detailed">
+        <div class="iniciativa-item">
+          <div class="iniciativa-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div class="iniciativa-content">
+            <h2>Divulgación en redes</h2>
+            <p>
+              Creamos contenido educativo y de interés en diversas plataformas digitales. Desde videos cortos explicativos hasta infografías, memes educativos y ensayos de divulgación, buscamos transmitir conocimiento científico y tecnológico de manera accesible y entretenida.
+            </p>
+            <h3>¿Qué hacemos?</h3>
+            <ul>
+              <li>Videos cortos explicativos sobre conceptos científicos</li>
+              <li>Infografías y visualizaciones de datos</li>
+              <li>Memes educativos que combinan humor y conocimiento</li>
+              <li>Ensayos de divulgación sobre temas de actualidad</li>
+              <li>Recomendaciones de recursos educativos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="iniciativa-item">
+          <div class="iniciativa-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <div class="iniciativa-content">
+            <h2>Conversatorios</h2>
+            <p>
+              Organizamos espacios de diálogo e intercambio de conocimientos donde expertos y público general pueden conversar sobre temas científicos y tecnológicos relevantes. Estos eventos promueven la participación activa y el pensamiento crítico.
+            </p>
+            <h3>Características</h3>
+            <ul>
+              <li>Participación de expertos en diversas áreas del conocimiento</li>
+              <li>Formato interactivo que permite preguntas y respuestas</li>
+              <li>Temas de actualidad e interés general</li>
+              <li>Accesibles tanto presencialmente como en línea</li>
+              <li>Grabaciones disponibles para consulta posterior</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="iniciativa-item">
+          <div class="iniciativa-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <div class="iniciativa-content">
+            <h2>Talleres</h2>
+            <p>
+              Creamos espacios prácticos de aprendizaje donde los participantes pueden experimentar directamente con conceptos científicos y tecnológicos mediante actividades guiadas por expertos. Estos talleres fomentan el aprendizaje activo y la curiosidad.
+            </p>
+            <h3>Tipos de talleres</h3>
+            <ul>
+              <li>Programación y desarrollo de software</li>
+              <li>Experimentos científicos accesibles</li>
+              <li>Electrónica básica y robótica</li>
+              <li>Análisis de datos y visualización</li>
+              <li>Comunicación científica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <h2>¿Quieres participar en nuestras iniciativas?</h2>
+        <p>Puedes unirte como colaborador o participante en cualquiera de nuestras actividades.</p>
+        <div class="cta-buttons">
+          <a href="/unete" class="btn btn-primary">Únete al equipo</a>
+          <a href="#" class="btn btn-secondary">Calendario de actividades</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-dark-light), var(--color-dark));
+    color: white;
+    padding: calc(var(--spacing-xxl) * 1.5) 0 var(--spacing-xl);
+    margin-top: 60px; /* Espacio para el navbar fijo */
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(90deg, white, var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    margin: 0 auto;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .iniciativas-intro {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .iniciativas-detailed {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+  }
+  
+  .iniciativa-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .iniciativa-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .iniciativa-item:nth-child(2) .iniciativa-icon {
+    background-color: var(--color-primary);
+  }
+  
+  .iniciativa-item:nth-child(3) .iniciativa-icon {
+    background-color: var(--color-accent);
+  }
+  
+  .iniciativa-content h2 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .iniciativa-content h3 {
+    color: var(--color-secondary);
+    font-size: 1.3rem;
+    margin: var(--spacing-md) 0;
+  }
+  
+  .iniciativa-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .iniciativa-content ul {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .iniciativa-content li {
+    margin-bottom: var(--spacing-sm);
+    color: #444;
+  }
+  
+  .cta-section {
+    text-align: center;
+    margin: var(--spacing-xxl) 0;
+    padding: var(--spacing-xl);
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius-lg);
+  }
+  
+  .cta-section h2 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .cta-section p {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .iniciativa-item {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .iniciativa-icon {
+      margin: 0 auto var(--spacing-md);
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+    
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>

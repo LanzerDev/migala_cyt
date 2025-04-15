@@ -1,0 +1,115 @@
+---
+// Componente Hero para la página principal
+---
+
+<section class="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1>Ciencia y Tecnología para todxs</h1>
+      <p class="hero-description">
+        Somos parte de una comunidad, un grupo de desconocidos de diversas partes del mundo con un objetivo en común "Impulsar y difundir la Ciencia y Tecnología".
+      </p>
+      <div class="hero-buttons">
+        <a href="/unete" class="btn btn-primary">Únete</a>
+        <a href="/conocenos" class="btn btn-secondary">Saber más</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/logo_migala_cyt.jpg" alt="Logo Migala Ciencia y Tecnología" class="hero-logo" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-dark-light), var(--color-dark));
+    color: white;
+    padding: calc(var(--spacing-xxl) * 2) 0 var(--spacing-xxl);
+    margin-top: 60px; /* Espacio para el navbar fijo */
+  }
+  
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(90deg, white, var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .hero-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-logo {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .hero-logo:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: calc(var(--spacing-xl) * 2) 0 var(--spacing-xl);
+    }
+    
+    .hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+      justify-content: center;
+    }
+    
+    .hero-image {
+      grid-row: 1;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-logo {
+      max-width: 200px;
+    }
+  }
+</style>
