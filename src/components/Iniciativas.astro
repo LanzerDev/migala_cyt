@@ -1,0 +1,130 @@
+---
+// Componente de Iniciativas
+---
+
+<section id="iniciativas" class="section iniciativas-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Nuestras Iniciativas</h2>
+      <div class="section-divider"></div>
+    </div>
+    
+    <div class="iniciativas-grid">
+      <div class="iniciativa-card">
+        <div class="iniciativa-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3>Divulgación en redes</h3>
+        <p>Contenido educativo y de interés en varias plataformas. Videos cortos, memes, infografías, ensayos...</p>
+      </div>
+      
+      <div class="iniciativa-card">
+        <div class="iniciativa-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </div>
+        <h3>Conversatorios</h3>
+        <p>Un espacio de diálogo e intercambio de conocimientos donde expertos y público dialogan sobre temas relevantes.</p>
+      </div>
+      
+      <div class="iniciativa-card">
+        <div class="iniciativa-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h3>Talleres</h3>
+        <p>Un espacio práctico de aprendizaje donde experimentarás con ciencia y tecnología mediante actividades guiadas por expertos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .iniciativas-section {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-xxl) 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    margin: 0 auto;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .iniciativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+  }
+  
+  .iniciativa-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .iniciativa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .iniciativa-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+  }
+  
+  .iniciativa-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+  }
+  
+  .iniciativa-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .iniciativas-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

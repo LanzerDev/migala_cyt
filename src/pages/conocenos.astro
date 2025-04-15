@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Conócenos | Migala Ciencia y Tecnología"
+  description="Conoce más sobre Migala Ciencia y Tecnología, nuestra misión, visión y valores."
+>
+  <section class="page-header">
+    <div class="container">
+      <h1>Conócenos</h1>
+      <div class="section-divider"></div>
+    </div>
+  </section>
+  
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Nuestra Misión</h2>
+          <p>
+            En Migala Ciencia y Tecnología, nuestra misión es democratizar el acceso al conocimiento científico y tecnológico, creando puentes entre la comunidad científica y el público general. Buscamos fomentar el pensamiento crítico y el interés por la ciencia a través de contenido accesible, riguroso y entretenido.
+          </p>
+          
+          <h2>Nuestra Visión</h2>
+          <p>
+            Aspiramos a construir una sociedad donde la ciencia y la tecnología sean herramientas de transformación social, accesibles para todas las personas independientemente de su origen o formación. Visualizamos un futuro donde el conocimiento científico sea valorado, comprendido y aplicado para resolver los grandes desafíos de nuestro tiempo.
+          </p>
+          
+          <h2>Nuestros Valores</h2>
+          <ul class="values-list">
+            <li>
+              <strong>Rigor:</strong> Nos comprometemos con la precisión y la veracidad en todo nuestro contenido.
+            </li>
+            <li>
+              <strong>Accesibilidad:</strong> Creemos que el conocimiento debe ser comprensible para todos.
+            </li>
+            <li>
+              <strong>Colaboración:</strong> Valoramos el trabajo en equipo y la diversidad de perspectivas.
+            </li>
+            <li>
+              <strong>Curiosidad:</strong> Fomentamos la inquietud intelectual y el deseo de aprender.
+            </li>
+            <li>
+              <strong>Impacto social:</strong> Buscamos que nuestro trabajo contribuya positivamente a la sociedad.
+            </li>
+          </ul>
+        </div>
+        
+        <div class="about-image">
+          <div class="image-container">
+            <div class="image-placeholder"></div>
+          </div>
+          
+          <div class="team-info">
+            <h3>Nuestro Equipo</h3>
+            <p>
+              Somos un grupo diverso de entusiastas de la ciencia y la tecnología, incluyendo científicos, ingenieros, comunicadores, diseñadores y educadores. Todos compartimos la pasión por hacer que estos temas sean accesibles y emocionantes para el público general.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--color-dark-light), var(--color-dark));
+    color: white;
+    padding: calc(var(--spacing-xxl) * 1.5) 0 var(--spacing-xl);
+    margin-top: 60px; /* Espacio para el navbar fijo */
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(90deg, white, var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    margin: 0 auto;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    margin: var(--spacing-xl) 0;
+  }
+  
+  .about-content h2 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+  }
+  
+  .about-content h2:first-child {
+    margin-top: 0;
+  }
+  
+  .about-content p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+  
+  [data-theme="dark"] .about-content p {
+    color: var(--color-text-secondary);
+  }
+  
+  .values-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .values-list li {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--color-text-secondary);
+  }
+  
+  .values-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+  }
+  
+  .image-container {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    height: 300px;
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .team-info {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .team-info p {
+    color: var(--color-text-secondary);
+  }
+  
+  [data-theme="dark"] .team-info {
+    background-color: var(--color-card-bg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .team-info h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+  }
+  
+  .team-info p {
+    color: var(--color-text-secondary);
+  }
+  
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+      order: -1;
+    }
+    
+    .image-container {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .about-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
